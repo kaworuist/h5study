@@ -1,0 +1,30 @@
+<!-- 两栏布局 
+    左侧70，右侧30 
+    flex实现 -->
+    <!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            
+            #wrap{display: flex;background-color: pink;height: 300px;margin: 20px auto;width: 500px;}
+            #left{flex: 7;background-color: orange;}
+            #right{flex: 3;background-color: darkorange;}
+    
+        </style>
+        <title>layout02</title>
+    </head>
+    
+    <body>
+        <div id="wrap">
+            <div id="right"></div>
+            <div id="left"></div>
+        </div>
+    </body>
+    
+    </html>

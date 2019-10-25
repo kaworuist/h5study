@@ -1,0 +1,159 @@
+<!-- 设计稿分为头部，中间的Banner，主导航，内容区域，底部
+头部区域为100%宽的一个深色背景，头部中间有一块960px的定宽居中区域，
+里面包括了左边的Logo和右上角导航
+Banner为100%宽的区块，中间右下方有banner轮显的当前图片数字的示例，
+其中正在显示的图片对应的数字有特殊样式
+（注意不需要实现轮显banner的业务逻辑，只是按照设计稿做静态样式）
+主导航区域，有一个100%宽的灰色线条，线条之上，在中间960px区域是导航菜单，
+当前正在浏览页对应的菜单有特殊样式
+主要内容区域，宽度为960px，里面每个内容都有至少80px的padding，
+每一个内容的宽度均为自适应，可以使用flex布局 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .center {
+            width: 960px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        #head {
+            color: white;
+            background-color: DarkSlateGray;
+            height: 50px;
+            line-height: 50px;
+        }
+
+        li {
+            float: right;
+            margin: -15px 5px 0px 5px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a:link {
+            font: 10px Arial;
+            color: white;
+        }
+
+        #banner {
+            color: black;
+            background-color: green;
+            height: 200px;
+            padding-bottom: 10px;
+        }
+
+        .num {
+            height: 17px;
+            width: 17px;
+            border: black solid 1px;
+            background-color: DarkSeaGreen;
+            margin: 170px 2px;
+        }
+
+        #nav {
+            height: 30px;
+            font-size: 0px;
+            padding-top: 20px;
+            border-bottom: gray 1px solid;
+        }
+
+        .nav {
+            height: 30px;
+            line-height: 1;
+        }
+
+        span {
+            box-sizing: border-box;
+            background-color: whitesmoke;
+            border: gray solid 1px;
+            border-radius: 20%;
+            display: inline-block;
+            height: 35px;
+            width: 60px;
+            text-align: center;
+            font: 12px Arial;
+            padding-top: 10px;
+        }
+
+        #first {
+            background-color: white;
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-around;
+            flex-flow: row wrap;
+            height: 600px;
+            margin: 10px auto;
+        }
+
+        #bottom {
+            position: fixed;
+            bottom: 0;
+            height: 55px;
+            width: 100%;
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="contain">
+        <div id="head">
+            <div class="center head">
+                <ul>
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Register</a></li>
+                    <li><a href="#">Github</a></li>
+                </ul>
+                Logo
+            </div>
+        </div>
+        <div id="banner">
+            <div class="center banner">
+                <ul id='num'>
+                    <li class="num">4</li>
+                    <li class="num">3</li>
+                    <li class="num">2</li>
+                    <li class="num">1</li>
+                </ul>
+            </div>
+        </div>
+        <div id="nav">
+            <div class="center nav">
+                <span id='first'>HOME</span>
+                <span>PROFILE</span>
+                <span>ABOUT</span>
+            </div>
+        </div>
+        <div id="content">
+            <div class="center content">
+                <div style="height: 180px;width: 300px;border:gray solid 1px">This is Content1</div>
+                <div style="height: 180px;width: 300px;border:gray solid 1px">This is Content2</div>
+                <div style="height: 180px;width: 300px;border:gray solid 1px">This is Content3</div>
+                <div style="height: 180px;width: 220px;border:gray solid 1px">This is Content4</div>
+                <div style="height: 180px;width: 220px;border:gray solid 1px">This is Content5</div>
+                <div style="height: 180px;width: 220px;border:gray solid 1px">This is Content7</div>
+                <div style="height: 180px;width: 220px;border:gray solid 1px">This is Content6</div>
+                <div style="height: 180px;width: 300px;border:gray solid 1px">This is Content8</div>
+                <div style="height: 180px;width: 300px;border:gray solid 1px">This is Content9</div>
+                <div style="height: 180px;width: 300px;border:gray solid 1px">This is Content10</div>
+            </div>
+        </div>
+        <div id="bottom"></div>
+    </div>
+</body>
+
+</html>
