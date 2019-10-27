@@ -1,0 +1,49 @@
+<!-- 用绝对定位覆盖在原图上，再将透明度调成0，hover时显示，注意rgba属性可以设背景透明度，另一种方法见主页面 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>遮罩层的实现</title>
+    <style>
+        .img_div {
+            margin: 20px 400px 0 400px;
+            position: relative;
+            width: 531px;
+            height: 354px;
+        }
+
+        .mask {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 531px;
+            height: 354px;
+            background: rgba(101, 101, 101, 0.6);
+            color: #ffffff;
+            opacity: 0;
+        }
+
+        .mask h3 {
+            text-align: center;
+        }
+
+        .img_div a:hover .mask{
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="img_div">
+        <img src="./img/human1.png">
+
+        <a href="#">
+            <div class="mask">
+                <h3>A Picture of food</h3>
+            </div>
+        </a>
+    </div>
+</body>
+
+</html>
