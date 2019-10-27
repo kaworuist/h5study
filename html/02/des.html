@@ -1,0 +1,367 @@
+<!-- 代码风格符合某种编码规范
+尽可能按照设计稿的尺寸进行实现
+设计稿中的图片或文字素材在实现时可以不一致
+充分应用上之前学习到的各种布局方式，尽可能几种方式都运用尝试一次，比较各种布局的适用场景
+设计稿中下方导师介绍图片，左上角灰色底表示，鼠标hover到图片上时的效果变化。
+不需要考虑兼容IE浏览器 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #wrap {
+            background-color: gray;
+            width: 100%;
+        }
+
+        #account {
+            height: 1000px;
+            width: 1600px;
+            background: url(./img/bg1.png);
+            margin: 0 auto;
+        }
+
+        #hello {
+            margin: 205px 415px 0px 415px;
+        }
+
+        #button {
+            height: 250px;
+            width: 965px;
+            margin: 100px auto;
+            border: gray solid 1px;
+        }
+
+        label>div {
+            display: inline-block;
+            height: 50px;
+            color: darkgray;
+            border: gray solid 1px;
+            margin-top: 54px;
+            font: bold 15px Arial;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        label>div:hover {
+            background-color: white;
+            color: black;
+        }
+
+        #banner {
+            background: url(./img/bg2.png);
+            height: 650px;
+            width: 1600px;
+            margin: 0 auto;
+        }
+
+        #pc {
+            background: url(./img/bg3.png);
+            height: 800px;
+            width: 1600px;
+            margin: 0 auto;
+        }
+
+        #pc>div {
+            border: gray solid 1px;
+            color: white;
+            margin-top: 555px;
+            font: 15px 'Tw Cen Mt';
+            width: 240px;
+        }
+
+        #pc>div:hover {
+            color: black;
+            background-color: #fff;
+        }
+
+        #section {
+            background: url(./img/bg4.png);
+            height: 580px;
+            width: 1600px;
+            margin: 0 auto;
+        }
+
+        #pic {
+            background: url(./img/bg5.png);
+            height: 950px;
+            width: 1600px;
+            margin: 0 auto;
+        }
+
+        #human {
+            background: url(./img/bg6.png);
+            height: 1084px;
+            width: 1600px;
+            margin: 0 auto;
+        }
+
+        #human img {
+            opacity: 0;
+        }
+
+        #human img:hover {
+            opacity: 1;
+        }
+
+        #contact {
+            background: url(./img/bg7.png);
+            margin: 0 auto;
+            height: 700px;
+            width: 1600px;
+            border: gray solid 1px;
+        }
+
+        form {
+            width: 420px;
+            height: 510px;
+            margin: 70px 0 0 310px;
+            border: gray solid 1px;
+            border-radius: 2%;
+            padding: 50px;
+            text-align: center;
+            font: 20px 'Myriad Pro';
+        }
+
+        .text {
+            display: inline-block;
+            width: 370px;
+            height: 50px;
+            margin-top: 30px;
+            text-indent: 10px;
+            line-height: 50px;
+        }
+
+        .message {
+            height: 145px;
+            margin-right: -5px;
+        }
+
+        #submit {
+            width: 0;
+            height: 0;
+            opacity: 0;
+        }
+
+        .submit {
+            background-color: black;
+            color: white;
+        }
+
+        #foot {
+            background-color: #000;
+            height: 420px;
+            width: 1600px;
+            margin: 0 auto;
+            color: purple;
+            position: relative;
+        }
+
+        #foot>ul {
+            list-style: none;
+            display: inline-block;
+            color: white;
+            height: 250px;
+            font-size: 10px;
+            margin-top: 90px;
+        }
+
+        #foot>ul>li {
+            margin-top: 35px;
+        }
+
+        #foot>ul:nth-child(1) {
+            width: 125px;
+            margin-left: 215px;
+        }
+
+        #foot>ul:nth-child(2) {
+            width: 150px;
+            margin-left: 170px;
+        }
+
+        #foot>ul:nth-child(3) {
+            width: 80px;
+            margin-left: 170px;
+        }
+
+        #foot a {
+            text-decoration: none;
+            color: gray;
+        }
+
+        #foot a:hover {
+            color: white;
+        }
+
+        #social {
+            position: absolute;
+            color: white;
+            height: 200px;
+            font-size: 10px;
+            width: 265px;
+            left: 1115px;
+            top: 90px;
+        }
+
+        #social div {
+            color: gray;
+            margin-top: 35px;
+        }
+
+        #social ul {
+            list-style: none;
+        }
+
+        #social li {
+            float: left;
+            height: 17px;
+            width: 30px;
+            background: url(./img/icon.png);
+            margin-right: 14px;
+            margin-top: 30px;
+        }
+
+        #social li:nth-child(2) {
+            background-position: -39px 0;
+        }
+
+        #social li:nth-child(3) {
+            background-position: -78px 0;
+        }
+
+        #social li:nth-child(4) {
+            background-position: -117px 0;
+        }
+
+        #social li:nth-child(5) {
+            background-position: -156px 0;
+        }
+
+        #social li:nth-child(6) {
+            background-position: -295px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="account">
+            <img id='hello' src="./img/Text.png">
+            <div id='button'>
+                <img style="margin: 65px auto 0;display: block;" src="./img/f1.png">
+                <img style="margin: 20px auto 0;display: block;" src="./img/f2.png">
+                <label for="d">
+                    <div style="margin-left: 15px;width: 290px;">densi@getcraftwork.com</div>
+                </label>
+                <button id='d' style="opacity: 0;"></button>
+                <label for="c">
+                    <div style="margin-left: 35px;width: 290px;">Create your password</div>
+                </label>
+                <button id='c' style="opacity: 0;"></button>
+                <label for="s">
+                    <div style="margin-left: 35px;width: 135px;">SIGN</div>
+                </label>
+                <button id='s' style="opacity: 0;"></button>
+            </div>
+        </div>
+        <div id='banner'></div>
+        <div id="pc">
+            <div id='check'
+                style="display: inline-block;height: 60px;line-height: 60px;text-align: center;margin-left: 315px;">
+                CHECK OUT FEATURES</div>
+            <div id='try' style="display: inline-block;height: 60px;line-height: 60px;text-align: center;">TRY PRODUCT
+                FOR FREE</div>
+        </div>
+        <div id='section'></div>
+        <div id="pic"></div>
+        <div id="human">
+            <div class='human'
+                style="width: 470px; height: 340px; margin: 270px 0 0 310px;background: url(./img/human1.png);display: inline-block">
+                <img title="大佬" src='./img/hover.png'></div>
+            <div class='human'
+                style="width: 470px; height: 340px; margin: 270px 0 0 30px;background: url(./img/human2.png);display: inline-block">
+                <img title="大佬" src='./img/hover.png'></div>
+            <div class='human'
+                style="width: 470px; height: 340px; margin: 30px 0 0 310px;background: url(./img/human3.png);display: inline-block">
+                <img title="大佬" src='./img/hover.png'></div>
+            <div class='human'
+                style="width: 470px; height: 340px; margin: 30px 0 0 30px;background: url(./img/human4.png);display: inline-block">
+                <img title="大佬" src='./img/hover.png'></div>
+        </div>
+        <div id='contact'>
+            <form>
+                FELL FREE TO WRITE US
+                <input class="text" type="email" required placeholder="E-mail">
+                <input class="text" type="text" placeholder="Subject">
+                <textarea class="text message" placeholder="Message"></textarea>
+                <label for="submit">
+                    <input id='submit' class="text" type="submit">
+                    <div class="text submit">SEND</div>
+                </label>
+            </form>
+        </div>
+        <div id="foot">
+            <ul id='learn'>
+                LEARN MORE
+                <li><a href='#;'>How it works</a></li>
+                <li><a href='#;'>Meeting tools</a></li>
+                <li><a href='#;'>Live streaming</a></li>
+                <li><a href='#;'>Contact method</a></li>
+            </ul>
+            <ul id='about'>
+                ABOUT US
+                <li><a href='#;'>About us</a></li>
+                <li><a href='#;'>Features</a></li>
+                <li><a href='#;'>Privacy police</a></li>
+                <li><a href='#;'>Terms&Conditions</a></li>
+            </ul>
+            <ul id='support'>
+                SUPPORT
+                <li><a href='#;'>FAQ</a></li>
+                <li><a href='#;'>Contact us</a></li>
+                <li><a href='#;'>Live chat</a></li>
+                <li><a href='#;'>Phone call</a></li>
+            </ul>
+            <div id='social'>
+                ENJOY YOUR LIFE
+                <div>
+                    Great web UI kit for designers,freelancers or business
+                </div>
+                <ul>
+                    <li title="twitter"></li>
+                    <li title="facebook"></li>
+                    <li title="google"></li>
+                    <li title="tumblr"></li>
+                    <li title="pinterest"></li>
+                    <li title="linkedin" style="margin-right: 0;"></li>
+                </ul>
+            </div>
+            <!-- 这里将UL设为inline-block有坑，具体见本目录下测试文档，其他lnlineblock元素位置会受UL中li数量的影响 -->
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    var d = document.getElementById('d')
+    d.onclick = function () {
+        alert('这是小小的交互')
+    }
+    var check = document.getElementById('check')
+    var pro = document.getElementById('try')
+    check.onclick = function () {
+        alert('小交互')
+    }
+    pro.onclick = function () {
+        alert('产品')
+    }
+</script>
+
+</html>
