@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        *{margin: 0;padding: 0;}
+        html,body{height: 100%;}
+        #wrap{display: flex;background-color: purple;overflow: auto;font-size: 12px;min-height: 100%;}
+        #wrap button:hover{cursor: pointer;}
+        #icon{flex: 0 0 100px;background-color: #1d2531;}
+        #option{flex: 0 0 250px;background-color: rgb(34, 44, 60);}
+        #content{flex: 1 1 0px;background-color: #fff;}
+        #follow{flex: 0 0 400px;border-right: #e6e9ec solid 1px;}
+        #follow>div{border-bottom: #e6e9ec solid 1px;}
+        .icon{display: inline-block;left: 0;top: 0;position: fixed;}
+        .icon button{display: inline-block;border: black solid 1px;border-radius: 50%;width: 62px;height: 62px;margin-top: 20px;margin-left: 18px;}
+        #set{display: inline-block;position: fixed;left: 0;bottom: 0;padding: 20px;}
+        #set button{display: inline-block;width: 18px;height: 18px;border: black solid 1px;margin: 5px;}
+        #option ul{display: inline-block;position: relative;width: 250px;list-style: none;color: white;font-weight: bold;}
+        #option button{display: inline-block;width: 18px;height: 18px;border: rgb(34, 44, 60) solid 1px;position: absolute;top: 30px;right: 20px;}
+        #option span{color: gray;}
+        #option li{margin: 30px;}
+        #option a{text-decoration: none;color: white;font-weight: bold;}
+        #option img{position: fixed;bottom: 20px;left: 130px;}
+        #head{line-height: 80px;text-indent: 30px;font-size: 24px;border-bottom: #e6e9ec solid 1px;height: 80px;}
+        #head img{position: fixed;right: 80px;top: 14px;}
+        #frame{display: flex;}
+        #search{height: 70px;line-height: 70px;text-align: center;position: relative;}
+        #search input{display: inline-block;border: #e6e9ec solid 1px;border-radius: 2%;height: 34px;width: 340px;text-indent: 12px;}
+        #search button{position: absolute;top: 27px;right: 48px;height: 17px;width: 17px;background: url(./images/Search-icon.png);border: white solid 1px;}
+        .follow{height: 102px;padding: 8px 20px 20px 20px;position: relative;}
+        .follow div:nth-child(1){position: relative;left: -15px;width: 191px;height: 70px;}
+        .follow:hover{border-left: #2399f1 solid 4px;}
+        .time{position: absolute;right: 20px;top: 25px;}
+        #message{flex: 1 1;}
+        #tools{padding: 20px;border-bottom: #e6e9ec solid 1px;height: 30px;position: relative;}
+        #tools button{display: inline-block;height: 38px;width: 38px;border: none;}
+        #tools button:nth-child(2){background: url(./images/Tools.png);background-position: -38px 0px;}
+        #tools button:nth-child(3){background: url(./images/Tools.png);background-position: -76px 0px;}
+        #tools button:nth-child(4){background: url(./images/tools2.png);margin-left: 100px;}
+        #tools button:nth-child(5){background: url(./images/tools2.png);background-position: -38px 0px;}
+        .tools{font-size: 0;position: absolute;top: 15px;right: 20px;}
+        #date{position: absolute;top: 20px;right: 110px;font-size: 15px;}
+        .line_02{
+            height: 1px;
+            border-top: 1px solid #ddd;
+            text-align: center;
+        }
+        .line_02 span{
+            position: relative;
+            top: -8px;
+            background: #fff;
+            padding: 0 20px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrap">
+        <div id='icon'>
+            <ul class="icon">
+                <li><button style="background: url(./images/icon_06.png);"></button></li>
+                <li><button style="background: url(./images/icon_10.png);"></button></li>
+                <li><button style="background: url(./images/icon_12.png);"></button></li>
+                <li><button style="background: url(./images/icon_14.png);"></button></li>
+            </ul>
+        </div>
+        <div id="set">
+            <button style="background: url(./images/icon1.png);"></button>
+            <button style="background: url(./images/icon2.png);"></button>
+        </div>
+        <div id='option'>
+                <ul>
+                        <li><span>MENU</span><button style="background: url(./images/icon2.png);"></button></li>
+                        <li><a href="#;">Overview</a></li>
+                        <li><a href="#;">Sales</a></li>
+                        <li><a href="#;">Your Staff</a></li>
+                        <li><a href="#;">What's New</a></li>
+                    </ul>
+                    <ul>
+                        <li><span>YOUR PRODUCTS</span><button style="background: url(./images/icon2.png);"></button></li>
+                        <li><a href="#;">Books</a></li>
+                        <li><a href="#;">Tutorials</a></li>
+                        <li><a href="#;">Stocks</a></li>
+                        <li><a href="#;">Infographics</a></li>
+                    </ul>
+                    <ul>
+                        <li><span>DASHBOARD</span><button style="background: url(./images/icon2.png);"></button></li>
+                        <li><a href="#;">Connections</a></li>
+                        <li><a href="#;">Integrations</a></li>
+                        <li><a href="#;">Account Settings</a></li>
+                        <li><a href="#;">App Settings</a></li>
+                    </ul>
+                    <img src="./images/exp.png">
+        </div>
+        <div id='content'>
+            <div id="head">MESSAGE<button></button><img src="./images/human.png"></div>
+            <div id="frame">
+                    <div id='follow'>
+                            <div id='search'>
+                                <input type="text" placeholder="Search">
+                                <button></button>
+                            </div>
+                            <div class="follow">
+                                <div><img src='./images/human1.png'></div>
+                                <div class="time">3m</div>
+                                <div>
+                                    This's my homework,sample but had try my best.I'd like to communicate with partner.Study have no endless
+                                </div>
+                            </div>
+                            <div class="follow">
+                                    <div><img src='./images/human2.png'></div>
+                                    <div class="time">3m</div>
+                                    <div>
+                                        This's my homework,sample but had try my best.I'd like to communicate with partner.Study have no endless
+                                    </div>
+                            </div>
+                            <div class="follow">
+                                    <div><img src='./images/human3.png'></div>
+                                    <div class="time">3m</div>
+                                    <div>
+                                        This's my homework,sample but had try my best.I'd like to communicate with partner.Study have no endless
+                                    </div>
+                            </div>
+                            <div class="follow">
+                                    <div><img src='./images/human4.png'></div>
+                                    <div class="time">3m</div>
+                                    <div>
+                                        This's my homework,sample but had try my best.I'd like to communicate with partner.Study have no endless
+                                    </div>
+                            </div>
+                            <div class="follow">
+                                    <div><img src='./images/human5.png'></div>
+                                    <div class="time">3m</div>
+                                    <div>
+                                        This's my homework,sample but had try my best.I'd like to communicate with partner.Study have no endless
+                                    </div>
+                            </div>
+                            <div class="follow">
+                                    <div><img src='./images/human6.png'></div>
+                                    <div class="time">3m</div>
+                                    <div>
+                                        This's my homework,sample but had try my best.I'd like to communicate with partner.Study have no endless
+                                    </div>
+                            </div>
+                            <div class="follow">
+                                    <div><img src='./images/human7.png'></div>
+                                    <div class="time">3m</div>
+                                    <div>
+                                        This's my homework,sample but had try my best.I'd like to communicate with partner.Study have no endless
+                                    </div>
+                            </div>
+                        </div>
+                        <div id='message'>
+                            <div id="tools">
+                                <img src="./images/name.png">
+                                <div class='tools'>
+                                    <button style="background: url(./images/Tools.png);"></button>
+                                    <button></button>
+                                    <button></button>
+                                    <button></button>
+                                    <button></button>
+                                    
+                                </div>
+                                <div id='date'>1 of 28</div>
+                            </div>
+                            <div style="height: 300px;"><img src="./images/mes_03.png"></div>
+                            <div class="line_02"><span>Time</span></div>
+                            <div style="height: 350px;"><img src="./images/mes_05.png"></div>
+                            <div class="line_02"><span>New Message</span></div>
+                            <div><img src="./images/mes_06.png"></div>
+                            <div style="position: fixed;bottom: 0px;padding: 25px;right: 0;left: 750px;display: flex;height: 55px;background-color: #fff;border-left: solid #e6e9ec 1px;">
+                                <button style="border: none;flex: 0 1 55px;padding: 0;background: url(./images/add.png);border: black solid 1px;background-position: -3px -4px;"></button>
+                                <input style="flex: 1 1 0;text-indent: 10px;" type="text">
+                            </div>
+                        </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

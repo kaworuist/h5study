@@ -1,0 +1,144 @@
+<!-- 最左侧一列要求自适应浏览器高度，左上面4个按钮相对浏览器左上角固定位置，左下方两个按钮相对浏览器左下角固定位置
+左侧第二列(蓝色背景色)导航列固定宽度，高度也是自适应浏览器高度，最下面的Monthly Goals部分的内容相对浏览器下边固定位置
+整个白色区域自适应宽度，右上方的人脸，名字部分相对浏览器右上角固定位置
+白色区域左侧列固定宽度，右侧列自适应宽度
+代码风格符合某种编码规范
+尽可能按照设计稿的尺寸进行实现
+不需要考虑兼容IE浏览器 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        *{margin: 0;padding: 0;}
+        html,body{height: 100%;}
+        #wrap{display: flex;background-color: purple;overflow: auto;font-size: 12px;height: 100%;}
+        #wrap button:hover{cursor: pointer;}
+        #icon{flex: 0 0 100px;background-color: #1d2531;height: 100%;}
+        #option{flex: 0 0 250px;background-color: rgb(34, 44, 60);}
+        #content{flex: 1 1 0px;background-color: #fff;}
+        #follow{display: inline-block;width: 400px;border-right: #e6e9ec solid 1px;}
+        #follow>div{border-bottom: #e6e9ec solid 1px;}
+        .icon{display: inline-block;left: 0;top: 0;}
+        .icon button{display: inline-block;border: black solid 1px;border-radius: 50%;width: 62px;height: 62px;margin-top: 20px;margin-left: 18px;}
+        #set{display: inline-block;position: fixed;left: 0;bottom: 0;padding: 20px;}
+        #set button{display: inline-block;width: 18px;height: 18px;border: black solid 1px;margin: 5px;}
+        #option ul{display: inline-block;position: relative;width: 250px;list-style: none;color: white;font-weight: bold;}
+        #option button{display: inline-block;width: 18px;height: 18px;border: rgb(34, 44, 60) solid 1px;position: absolute;top: 30px;right: 20px;}
+        #option span{color: gray;}
+        #option li{margin: 30px;}
+        #option a{text-decoration: none;color: white;font-weight: bold;}
+        #option img{position: fixed;bottom: 20px;left: 130px;}
+        #head{line-height: 80px;text-indent: 30px;font-size: 24px;border-bottom: #e6e9ec solid 1px;height: 80px;}
+        #head img{position: fixed;right: 80px;top: 14px;}
+        #search{height: 70px;line-height: 70px;text-align: center;position: relative;}
+        #search input{display: inline-block;border: #e6e9ec solid 1px;border-radius: 2%;height: 34px;width: 340px;text-indent: 12px;}
+        #search button{position: absolute;top: 27px;right: 48px;height: 17px;width: 17px;background: url(./images/Search-icon.png);border: white solid 1px;}
+        .follow{height: 130px;padding: 8px 20px 20px 20px;position: relative;}
+        .follow div:nth-child(1){position: relative;left: -15px;width: 191px;height: 70px;}
+        .time{position: absolute;right: 20px;top: 25px;}
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrap">
+        <div id='icon'>
+            <ul class="icon">
+                <li><button style="background: url(./images/icon_06.png);"></button></li>
+                <li><button style="background: url(./images/icon_10.png);"></button></li>
+                <li><button style="background: url(./images/icon_12.png);"></button></li>
+                <li><button style="background: url(./images/icon_14.png);"></button></li>
+            </ul>
+        </div>
+        <div id="set">
+            <button style="background: url(./images/icon1.png);"></button>
+            <button style="background: url(./images/icon2.png);"></button>
+        </div>
+        <div id='option'>
+                <ul>
+                        <li><span>MENU</span><button style="background: url(./images/icon2.png);"></button></li>
+                        <li><a href="#;">Overview</a></li>
+                        <li><a href="#;">Sales</a></li>
+                        <li><a href="#;">Your Staff</a></li>
+                        <li><a href="#;">What's New</a></li>
+                    </ul>
+                    <ul>
+                        <li><span>YOUR PRODUCTS</span><button style="background: url(./images/icon2.png);"></button></li>
+                        <li><a href="#;">Books</a></li>
+                        <li><a href="#;">Tutorials</a></li>
+                        <li><a href="#;">Stocks</a></li>
+                        <li><a href="#;">Infographics</a></li>
+                    </ul>
+                    <ul>
+                        <li><span>DASHBOARD</span><button style="background: url(./images/icon2.png);"></button></li>
+                        <li><a href="#;">Connections</a></li>
+                        <li><a href="#;">Integrations</a></li>
+                        <li><a href="#;">Account Settings</a></li>
+                        <li><a href="#;">App Settings</a></li>
+                    </ul>
+                    <img src="./images/exp.png">
+        </div>
+        <div id='content'>
+            <div id="head">MESSAGE<button></button></div>
+            <div id='follow'>
+                <div id='search'>
+                    <input type="text" placeholder="Search">
+                    <button></button>
+                </div>
+                <div class="follow">
+                    <div><img src='./images/human1.png'></div>
+                    <div class="time">3m</div>
+                    <div>
+                        This's my homework,sample but had try my best.I'd like to communicate with partner.Study have no endless
+                    </div>
+                </div>
+                <div class="follow">
+                        <div><img src='./images/human2.png'></div>
+                        <div class="time">3m</div>
+                        <div>
+                            This's my homework,sample but had try my best.I'd like to communicate with partner.Study have no endless
+                        </div>
+                </div>
+                <div class="follow">
+                        <div><img src='./images/human3.png'></div>
+                        <div class="time">3m</div>
+                        <div>
+                            This's my homework,sample but had try my best.I'd like to communicate with partner.Study have no endless
+                        </div>
+                </div>
+                <div class="follow">
+                        <div><img src='./images/human4.png'></div>
+                        <div class="time">3m</div>
+                        <div>
+                            This's my homework,sample but had try my best.I'd like to communicate with partner.Study have no endless
+                        </div>
+                </div>
+                <div class="follow">
+                        <div><img src='./images/human5.png'></div>
+                        <div class="time">3m</div>
+                        <div>
+                            This's my homework,sample but had try my best.I'd like to communicate with partner.Study have no endless
+                        </div>
+                </div>
+                <div class="follow">
+                        <div><img src='./images/human6.png'></div>
+                        <div class="time">3m</div>
+                        <div>
+                            This's my homework,sample but had try my best.I'd like to communicate with partner.Study have no endless
+                        </div>
+                </div>
+                <div class="follow">
+                        <div><img src='./images/human7.png'></div>
+                        <div class="time">3m</div>
+                        <div>
+                            This's my homework,sample but had try my best.I'd like to communicate with partner.Study have no endless
+                        </div>
+                </div>
+            </div>
+            <div id='message'></div>
+        </div>
+    </div>
+</body>
+</html>
+
+
