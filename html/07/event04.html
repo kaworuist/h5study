@@ -72,7 +72,7 @@
     let fun2 = function(){
         setTimeout(function(){
             if(fade.style.opacity < 1){
-                fade.style.opacity = 0.2+parseFloat(fade.style.opacity)
+                fade.style.opacity = +fade.style.opacity+0.2
                 btn.disabled = true
                 fun2()
             }else if(fade.style.opacity == 1){
