@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p id='time'></p>
+</body>
+<script>
+    let res = document.getElementById('time')
+    let month = ['12月','1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月']
+    let week = ['星期天','星期一','星期二','星期三','星期四','星期五','星期六']
+    let check = function(num){
+        if(num<10){num = '0'+num}
+        return num
+    }
+    let oclock = function(){
+        let today = new Date()
+        let y = today.getFullYear()
+        let m = today.getMonth()
+        let d = today.getDay()
+        let h = today.getHours()
+        let min = today.getMinutes()
+        let s = today.getSeconds()
+        let time = `${y}年${month[m]}${week[d]}${check(h)}时${check(min)}分${check(s)}秒`
+        res.innerHTML = time
+    }
+    setInterval(oclock,500)
+</script>
+</html>
