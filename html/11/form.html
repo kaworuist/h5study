@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        #result{visibility: hidden;}
+    </style>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id='area'>
+        <label><input  type="radio" value="华东" name="area">华东</label>
+        <label><input  type="radio" value="华南" name="area">华南</label>
+        <label><input  type="radio" value="华北" name="area">华北</label>
+    </div>
+    <table id='result'>
+        <thead>
+            <td>商品</td>
+            <td>地区</td>
+            <td>1月</td>
+            <td>2月</td>
+            <td>3月</td>
+            <td>4月</td>
+            <td>5月</td>
+            <td>6月</td>
+            <td>7月</td>
+            <td>8月</td>
+            <td>9月</td>
+            <td>10月</td>
+            <td>11月</td>
+            <td>12月</td>
+        </thead>
+    </table>
+</body>
+<script src="ife31data.js"></script>
+<script>
+    let table = document.getElementById('result')
+    let start = document.getElementById('result').innerHTML
+    let area = document.getElementById('area')
+    area.onclick = function(e){
+        let result = start
+        table.style.visibility = 'visible'
+        let area = e.target.value
+        for(let i=0;i<sourceData.length;i++){
+            let content = `<td>${sourceData[i].product}</td><td>${area}</td>`
+            if(sourceData[i].region == area){
+                for(let j=0;j<sourceData[i].sale.length;j++){
+                    content += `<td>${sourceData[i].sale[j]}</td>`
+                }
+                result += `<tr>${content}</tr>`    
+            }
+            table.innerHTML = result   
+        }
+    }
+</script>
+</html>
